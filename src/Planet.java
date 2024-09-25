@@ -1,8 +1,8 @@
 public class Planet {
 
     // Класс
-    String name;
-    double weight;
+    private String name;
+    private double weight;
 
     // Конструктор
     public Planet(String name, double weight) {
@@ -10,9 +10,12 @@ public class Planet {
         this.weight = weight;
     }
 
-    // Метод
-    public void method() {
-        System.out.println(name);
+    public String getName() {
+        return name;
+    }
+
+    public double weight() {
+        return weight;
     }
 
     @Override
@@ -23,8 +26,6 @@ public class Planet {
                 '}';
     }
 
-    public double weight() {
-        return weight;
-    }
+
 }
 
