@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -22,11 +21,9 @@ public class Main {
             System.out.println(planet);
         }
 
-
         solarSystem.sort(new Astronom());
         System.out.println("Sorted by weight: \n" + solarSystem);
 //        solarSystem.sort((mass1, mass2) -> Double.compare(mass1.weight(), mass2.weight()));
-
 
         solarSystem.sort(new Stargazer());
         System.out.println("Sorted by name: \n" + solarSystem);
@@ -37,17 +34,17 @@ public class Main {
     }
 }
 
+//        // Сортировка по имени, а затем по весу
 class CompareByMultipleParameters implements Comparator<Planet> {
     @Override
     public int compare(Planet p1, Planet p2) {
-        Stargazer sg = new Stargazer();
-        if (sg.compare(p1, p2) == 0) {
-            Astronom astro = new Astronom();
-            return astro.compare(p1, p2);
-        } else return sg.compare(p1, p2);
+        Stargazer stargazer = new Stargazer();
+        if (stargazer.compare(p1, p2) == 0) {
+            Astronom astronom = new Astronom();
+            return astronom.compare(p1, p2);
+        } else return stargazer.compare(p1, p2);
     }
 
-//        // Сортировка по имени, а затем по весу
 //                Collections.sort(solarSystem,new Comparator<Planet>()
 //
 //        {
